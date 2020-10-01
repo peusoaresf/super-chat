@@ -11,11 +11,13 @@ export default function ChatForm({ onSubmit }) {
     };
 
     return (
-        <View style={styles.formContainer}>
-            <TextInput style={styles.textInput} value={text} onChangeText={text => setText(text)} placeholder="Type a message" />
-            <TouchableOpacity onPress={submit} style={styles.submitButton}>
-                <Icon name="send" size={18} color="#999" />
-            </TouchableOpacity >
+        <View style={{ height: 55 }}>
+            <View style={styles.formContainer}>
+                <TextInput style={styles.textInput} value={text} onChangeText={text => setText(text)} placeholder="Type a message" />
+                <TouchableOpacity onPress={submit} style={styles.submitButton}>
+                    <Icon name="send" size={18} color="#999" />
+                </TouchableOpacity >
+            </View>
         </View>
     );
 };

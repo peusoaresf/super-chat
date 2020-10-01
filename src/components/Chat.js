@@ -26,13 +26,9 @@ export default function Chat({ user }) {
     }, []);
 
     return (
-        <View style={{ flex: 1 }}>
-            <View style={{ flex: 1, backgroundColor: '#E5DDD5' }}>
-                <ChatMessageList messages={messages} user={user} />
-            </View>
-            <View style={{ height: 50 }}>
-                <ChatForm onSubmit={sendText} />
-            </View>
+        <View style={{ flex: 1 }}>            
+            <ChatMessageList messages={messages} user={user} />
+            <ChatForm onSubmit={sendText} />
         </View>
     );
 }
