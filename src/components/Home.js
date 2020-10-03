@@ -15,16 +15,16 @@ const data = Array.from(Array(20).keys()).map((id) => ({
   avatarUrl: 'https://reactnative.dev/img/tiny_logo.png',
   chatTitle: 'Chat ' + id,
   lastMessage: {
-    text: 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk kk',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     sentAt: id % 2 ? new Date() : (id % 3 ? yesterdayObj : old)
   }
 })).sort((a, b) => new Date(b.lastMessage.sentAt) - new Date(a.lastMessage.sentAt));
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <View style={{ flex: 1 }}>
       <HomeHeader />
-      <ChatList items={data} />
+      <ChatList items={data} onItemPress={() => navigation.navigate('Chat')} />
     </View>
   );
 }

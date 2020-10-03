@@ -1,11 +1,15 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
+import { NavigationContainer } from '@react-navigation/native';
 import ChatApp from './src/ChatApp.js';
 
 export default function App() {
   return (
-    <RecoilRoot>
-      <ChatApp />
-    </RecoilRoot>
+    <NavigationContainer>
+      <RecoilRoot>
+        <ChatApp />
+      </RecoilRoot>
+    </NavigationContainer>
   )
 }
