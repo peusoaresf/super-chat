@@ -1,7 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useRecoilValue } from 'recoil';
+import { user as userAtom } from '../atoms/user.js';
 
-export default function ChatMessage({ message, user }) {
+export default function ChatMessage({ message }) {
+    const user = useRecoilValue(userAtom);
+
     const isOutgoing = () => message.sentBy === user.id;
 
     return (

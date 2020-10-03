@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
+import { useRecoilValue } from 'recoil';
+import { user as userAtom } from '../atoms/user.js';
 import ChatMessageList from './ChatMessageList.js';
 import ChatForm from './ChatForm.js';
 import ChatChannel from '../services/ChatChannel.js';
 
-export default function Chat({ user }) {
+export default function Chat() {
+    const user = useRecoilValue(userAtom);
     const [messages, setMessages] = useState([]);
 
     const pushMessage = (message) => setMessages((prevState) => prevState.concat([message]));
@@ -20,14 +23,14 @@ export default function Chat({ user }) {
     };
 
     useEffect(() => {
-        ChatChannel.subscribeToNewMessage((message) => pushMessage(message));       
+        ChatChannel.subscribeToNewMessage((message) => pushMessage(message));
 
         return () => ChatChannel.unsubscribeFromNewMessage();
     }, []);
 
     return (
-        <View style={{ flex: 1 }}>            
-            <ChatMessageList messages={messages} user={user} />
+        <View style={{ flex: 1 }}>
+            <ChatMessageList messages={messages} />
             <ChatForm onSubmit={sendText} />
         </View>
     );
