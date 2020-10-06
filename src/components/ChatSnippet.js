@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function ChatSnippet({ title, lastMessage }) {
+export default function ChatSnippet({ title, lastMessage, unreadMessages }) {
   return (
     <View style={styles.snippetContainer}>
       <SnippetMain title={title} lastMessageText={lastMessage.text} />
-      <SnippetSecondary date={lastMessage.sentAt} />
+      <SnippetSecondary date={lastMessage.sentAt} unreadMessages={unreadMessages} />
     </View>
   );
 }
@@ -19,7 +19,7 @@ function SnippetMain({ title, lastMessageText }) {
   );
 }
 
-function SnippetSecondary({ date }) {
+function SnippetSecondary({ date, unreadMessages }) {
 
   const formatDate = (dateObj) => {
     const isToday = (d) => d.toDateString() === (new Date()).toDateString();
@@ -45,8 +45,17 @@ function SnippetSecondary({ date }) {
 
   return (
     <View style={{ width: 90, alignItems: 'flex-end', marginRight: 10, marginTop: 5 }}>
-      <Text style={{ fontSize: 11 }}>{formatDate(date)}</Text>
-    </View>
+      <Text style={[styles.secondaryText, { marginBottom: 10 }]}>{formatDate(date)}</Text>
+      {
+        unreadMessages
+          ? (
+            <View style={styles.unreadMessagesCounter}>
+              <Text style={[styles.secondaryText, { color: 'white' }]}>{unreadMessages}</Text>
+            </View>
+          )
+          : <></>
+      }
+    </View >
   );
 }
 
@@ -63,5 +72,16 @@ const styles = StyleSheet.create({
   titleText: {
     fontWeight: 'bold',
     fontSize: 16
+  },
+  secondaryText: {
+    fontSize: 11
+  },
+  unreadMessagesCounter: {
+    backgroundColor: 'green',
+    borderRadius: 50,
+    height: 15,
+    width: 15,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });

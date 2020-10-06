@@ -28,12 +28,14 @@ export default function useMessages() {
         id: chat.id,
         avatarUrl: chat.avatarUrl || '',
         chatTitle: chat.title || 'error',
-        lastMessage: message
+        lastMessage: message,
+        unreadMessages: 1
       }
 
       let indexOfChat = newState.findIndex(chat => chat.id === updatedValue.id);
 
       if (indexOfChat !== -1) {
+        updatedValue.unreadMessages = newState[indexOfChat].unreadMessages + 1;
         newState[indexOfChat] = updatedValue;
       }
       else {
