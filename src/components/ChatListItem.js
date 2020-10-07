@@ -16,6 +16,6 @@ const styles = StyleSheet.create({
   listItem: {
     flexDirection: 'row',
     marginLeft: 10,
-    marginVertical: 10
+    marginVertical: 15
   }
 });
