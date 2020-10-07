@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-export default function Avatar({ uri }) {
+export default function Avatar({ uri, size = 55 }) {
   return (
-    <Image style={{ width: 50, height: 50, borderRadius: 50 }} source={{ uri }} />
+    <Image style={{ width: size, height: size, borderRadius: 50 }} source={{ uri }} />
   );
 }

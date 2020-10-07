@@ -4,6 +4,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { user as userAtom } from '../atoms/user.js';
 import { chats as chatsAtom } from '../atoms/chats.js';
 import { messages as messagesAtom } from '../atoms/messages.js';
+import ChatHeader from './ChatHeader.js';
 import ChatMessageList from './ChatMessageList.js';
 import ChatForm from './ChatForm.js';
 import ChatChannel from '../services/ChatChannel.js';
@@ -13,10 +14,12 @@ export default function Chat({ route }) {
   const { chatId } = route.params;
 
   const user = useRecoilValue(userAtom);
+
   const messagesState = useRecoilValue(messagesAtom);
+  const messages = messagesState[chatId];
   const pushMessage = useMessages();
 
-  const messages = messagesState[chatId];
+  const chat = user.chats.find(c => c.id === chatId);
   const setChats = useSetRecoilState(chatsAtom);
 
   const sendText = (text) => {
@@ -55,6 +58,7 @@ export default function Chat({ route }) {
 
   return (
     <View style={{ flex: 1 }}>
+      <ChatHeader avatarUri={chat.avatarUrl} chatTitle={chat.title} />
       <ChatMessageList messages={messages} />
       <ChatForm onSubmit={sendText} />
     </View>
