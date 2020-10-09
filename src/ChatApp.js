@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar, StyleSheet, SafeAreaView } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './components/Home.js';
 import Chat from './components/Chat.js';
+import useMessages from './hooks/useMessages.js';
+import ChatChannel from './services/ChatChannel.js';
 
 const Stack = createStackNavigator();
 
 export default function ChatApp() {
+  const pushMessage = useMessages();
+
+  useEffect(() => {
+    ChatChannel.subscribeToNewMessage((message) => {
+      pushMessage(message);
+    });
+
+    return () => ChatChannel.unsubscribeFromNewMessage();
+  }, []);
+
   return (
     <SafeAreaView style={styles.appContainer}>
       <Stack.Navigator initialRouteName="Home" headerMode={false}>

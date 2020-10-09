@@ -1,24 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { View } from 'react-native';
 import { useRecoilValue } from 'recoil';
+import { useFocusEffect } from '@react-navigation/native';
 import HomeHeader from './HomeHeader.js';
 import ChatList from './ChatList.js';
-import ChatChannel from '../services/ChatChannel.js';
 import { chats as chatsAtom } from '../atoms/chats.js';
-import useMessages from '../hooks/useMessages.js';
+import notificationSound from '../utils/notificationSound.js';
+
+function useSkipFirstEffect(callback, dependencies) {
+  const [firstRender, setFirstRender] = useState(true);
+
+  useFocusEffect(
+    useCallback(() => {
+      if (!firstRender) {
+        callback();
+      }
+
+      if (firstRender) {
+        setFirstRender(false);
+      }
+
+      return () => setFirstRender(true);
+    }, dependencies)
+  );
+}
 
 export default function Home({ navigation }) {
-
   const chats = useRecoilValue(chatsAtom);
-  const pushMessage = useMessages();
 
-  useEffect(() => {
-    ChatChannel.subscribeToNewMessage((message) => {
-      pushMessage(message);
-    });
-
-    return () => ChatChannel.unsubscribeFromNewMessage();
-  }, []);
+  useSkipFirstEffect(() => {
+    notificationSound.play();
+  }, [chats]);
 
   return (
     <View style={{ flex: 1 }}>
