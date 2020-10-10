@@ -66,7 +66,7 @@ function PasswordInput({ value, onChangeText }: {
 }) {
   return (
     <Input
-      placeholder="Enter your username"
+      placeholder="Enter your password"
       value={value}
       onChangeText={onChangeText}
       secureTextEntry={true} />
