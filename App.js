@@ -4,7 +4,7 @@ import { RecoilRoot } from 'recoil';
 import { NavigationContainer } from '@react-navigation/native';
 import ChatApp from './src/ChatApp.js';
 
-export default function App() {
+export default function App() { 
   return (
     <NavigationContainer>
       <RecoilRoot>
