@@ -5,6 +5,7 @@ import Home from './components/Home.js';
 import Chat from './components/Chat.js';
 import useMessages from './hooks/useMessages.js';
 import ChatChannel from './services/ChatChannel.js';
+import Login from './screens/Login.tsx';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,8 @@ export default function ChatApp() {
 
   return (
     <SafeAreaView style={styles.appContainer}>
-      <Stack.Navigator initialRouteName="Home" headerMode={false}>
+      <Stack.Navigator initialRouteName="Login" headerMode={false}>
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Chat" component={Chat} />
       </Stack.Navigator>
