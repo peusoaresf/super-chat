@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E5DDD5",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 250,
+        "justifyContent": "space-between",
+        "width": "100%",
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      autoCapitalize="none"
+      onChangeText={[Function]}
+      placeholder="Enter your username"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 10,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      autoCapitalize="none"
+      onChangeText={[Function]}
+      placeholder="Enter your password"
+      rejectResponderTermination={true}
+      secureTextEntry={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 10,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#075E55",
+          "borderRadius": 10,
+          "justifyContent": "center",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        Login
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#075E55",
+          "borderRadius": 10,
+          "justifyContent": "center",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        Sign Up
+      </Text>
+    </View>
+  </View>
+</View>
+`;
