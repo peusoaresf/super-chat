@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 import { useRecoilValue } from 'recoil';
-import HomeHeader from '../../components/home/HomeHeader';
-import ChatList from '../../components/home/ChatList';
-import { chats as chatsAtom } from '../../atoms/chats.js';
-import notificationSound from '../../utils/notificationSound.js';
-import useSkipFirstEffect from '../../hooks/useSkipFirstEffect.js';
+import HomeHeader from 'superchat/src/components/home/HomeHeader';
+import ChatList from 'superchat/src/components/home/ChatList';
+import { chats as chatsAtom } from 'superchat/src/atoms/chats';
+import notificationSound from 'superchat/src/utils/notificationSound';
+import useSkipFirstEffect from 'superchat/src/hooks/useSkipFirstEffect';
 
 export default function Home({ navigation }) {
   const chats = useRecoilValue(chatsAtom);

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { user as userAtom } from 'superchat/src/atoms/user.js';
-import { chats as chatsAtom } from 'superchat/src/atoms/chats.js';
-import { messages as messagesAtom } from 'superchat/src/atoms/messages.js';
+import { user as userAtom } from 'superchat/src/atoms/user';
+import { chats as chatsAtom } from 'superchat/src/atoms/chats';
+import { messages as messagesAtom } from 'superchat/src/atoms/messages';
 import ChatHeader from 'superchat/src/components/chat/ChatHeader';
 import ChatMessageList from 'superchat/src/components/chat/ChatMessageList';
 import ChatForm from 'superchat/src/components/chat/ChatForm';
-import ChatChannel from 'superchat/src/services/ChatChannel.js';
-import useMessages from 'superchat/src/hooks/useMessages.js';
+import ChatChannel from 'superchat/src/services/ChatChannel';
+import useMessages from 'superchat/src/hooks/useMessages';
 
 export default function Chat({ route }) {
   const { chatId } = route.params;

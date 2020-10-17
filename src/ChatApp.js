@@ -4,8 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
 import Chat from './screens/Chat';
 import Login from './screens/Login';
-import useMessages from './hooks/useMessages.js';
-import ChatChannel from './services/ChatChannel.js';
+import useMessages from './hooks/useMessages';
+import ChatChannel from './services/ChatChannel';
 
 const Stack = createStackNavigator();
 

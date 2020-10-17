@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useRecoilValue } from 'recoil';
-import { user as userAtom } from 'superchat/src/atoms/user.js';
+import { user as userAtom } from 'superchat/src/atoms/user';
 
 export default function ChatMessage({ message }) {
   const user = useRecoilValue(userAtom);

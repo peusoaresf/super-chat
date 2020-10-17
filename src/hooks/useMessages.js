@@ -1,7 +1,7 @@
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { user as userAtom } from '../atoms/user.js';
-import { messages as messagesAtom } from '../atoms/messages.js';
-import { chats as chatsAtom } from '../atoms/chats.js';
+import { user as userAtom } from '../atoms/user';
+import { messages as messagesAtom } from '../atoms/messages';
+import { chats as chatsAtom } from '../atoms/chats';
 
 export default function useMessages() {
 
