@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './base/Header.js';
-import IconButton from './base/IconButton.js';
-import Avatar from './Avatar.js';
+import Header from '../../base/Header';
+import IconButton from '../../base/IconButton';
+import Avatar from '../../general/Avatar';
 import { Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 

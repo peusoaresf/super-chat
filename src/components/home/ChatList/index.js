@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
-import ChatListItem from './ChatListItem.js';
+import ChatListItem from '../ChatListItem';
 
 export default function ChatList({ items, onItemPress }) {
   return (

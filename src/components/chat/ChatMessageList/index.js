@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
-import ChatMessage from './ChatMessage.js';
+import ChatMessage from '../ChatMessage';
 
 export default function ChatMessageList({ messages }) {
   return (

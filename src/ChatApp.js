@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { StatusBar, StyleSheet, SafeAreaView } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './components/Home.js';
-import Chat from './components/Chat.js';
+import Home from './screens/Home';
+import Chat from './screens/Chat';
+import Login from './screens/Login';
 import useMessages from './hooks/useMessages.js';
 import ChatChannel from './services/ChatChannel.js';
-import Login from './screens/Login.tsx';
 
 const Stack = createStackNavigator();
 

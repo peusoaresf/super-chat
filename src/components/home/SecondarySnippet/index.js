@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import UnreadMessagesCounter from './UnreadMessagesCounter.js';
-import DateSnippet from './DateSnippet.js';
+import UnreadMessagesCounter from '../UnreadMessagesCounter';
+import DateSnippet from '../DateSnippet';
 
 export default function SecondarySnippet({ date, unreadMessages }) {
   return (

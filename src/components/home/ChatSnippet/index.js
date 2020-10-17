@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import MainSnippet from './MainSnippet.js';
-import SecondarySnippet from './SecondarySnippet.js';
+import MainSnippet from '../MainSnippet';
+import SecondarySnippet from '../SecondarySnippet';
 
 export default function ChatSnippet({ title, lastMessage, unreadMessages }) {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './base/Header.js';
-import IconButton from './base/IconButton.js';
-import AppTitle from './AppTitle.js';
+import Header from '../../base/Header';
+import IconButton from '../../base/IconButton';
+import AppTitle from '../AppTitle';
 
 export default function HomeHeader() {
 

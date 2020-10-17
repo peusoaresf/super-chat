@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Login from '../../src/screens/Login.tsx';
+import Login from './';
 
 jest.useFakeTimers();
 

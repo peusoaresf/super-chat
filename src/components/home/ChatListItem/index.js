@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import Avatar from './Avatar.js';
-import ChatSnippet from './ChatSnippet.js';
+import Avatar from '../../general/Avatar';
+import ChatSnippet from '../ChatSnippet';
 
 export default function ChatListItem({ avatarUrl, chatTitle, lastMessage, unreadMessages, onPress }) {
   return (
