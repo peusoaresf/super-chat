@@ -1,4 +1,4 @@
-import { formatDate } from './logic'
+import formatDate from './formatDate'
 
 describe('Date formatter', () => {
   it('formats today correctly', () => {
