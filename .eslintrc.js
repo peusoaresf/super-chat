@@ -24,6 +24,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
+    '@typescript-eslint/no-unused-vars': ['error'],
     'import/extensions': ['error', 'never'],
     'import/no-unresolved': 'off'
   }
