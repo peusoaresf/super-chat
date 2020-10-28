@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-const Component = ({ date, formatDate }) => (
+const DateSnippet = ({ date }) => (
   <Text style={{ fontSize: 11, marginBottom: 10 }}>
-    {formatDate(date)}
+    {date}
   </Text>
 );
 
-export default Component;
+export default DateSnippet;

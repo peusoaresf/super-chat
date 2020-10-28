@@ -1,11 +1,9 @@
 import React from 'react';
-import Component from './index.component';
-import { formatDate } from './index.logic';
+import DateSnippet from './DateSnippet';
+import { formatDate } from './logic';
 
-const DateSnippet = ({ date }) => (
-  <Component
-    date={date}
-    formatDate={formatDate} />
+const Container = ({ date }) => (
+  <DateSnippet date={formatDate(date)} />
 );
 
-export default DateSnippet;
+export default Container;
