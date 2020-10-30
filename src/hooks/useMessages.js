@@ -22,7 +22,10 @@ export default function useMessages() {
 
     setChats((previousState) => {
       let newState = previousState.concat([]),
-        chat = user.chats.find(chat => chat.id === message.chatId) || {};
+        chat = user.chats.find(chat => chat.id === message.chatId);
+
+      // TODO: Lidar com mensagens de usuários que te adicionaram mas vc não adicionou de volta!
+      if (!chat) throw new Error('O usuário corrente não possui chatId para a mensagem recebida')
 
       let updatedValue = {
         id: chat.id,
