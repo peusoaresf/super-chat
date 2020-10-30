@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { signup, signin } from '../../services/authService'
+import { getUserDetails } from '../../services/userService'
+import { user as userAtom } from '../../atoms/user'
+import { useSetRecoilState } from 'recoil'
+import { config } from '../../services/request'
 
 export default function Login({ navigation }: {
   navigation: StackNavigationProp<any, any>
@@ -8,10 +13,19 @@ export default function Login({ navigation }: {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [buttonDisabled, setButtonDisabled] = useState(false);
+  const setUser = useSetRecoilState(userAtom)
 
   useEffect(() => {
     setButtonDisabled((!username || !password));
   }, [username, password])
+
+  const handleUserLogin = async (getToken) => {
+    const token = await getToken(username, password)
+    config.authToken = token
+    const userDetails = await getUserDetails()
+    setUser(userDetails)
+    navigation.navigate('Home')
+  }
 
   return (
     <View style={styles.screenContainer}>
@@ -22,8 +36,8 @@ export default function Login({ navigation }: {
         <PasswordInput
           value={password}
           onChangeText={(text) => setPassword(text)} />
-        <LoginButton onPress={() => navigation.navigate('Home')} disabled={buttonDisabled} />
-        <SignUpButton onPress={() => console.log('sign up')} disabled={buttonDisabled} />
+        <LoginButton onPress={() => handleUserLogin(signin)} disabled={buttonDisabled} />
+        <SignUpButton onPress={() => handleUserLogin(signup)} disabled={buttonDisabled} />
       </View>
     </View>
   );
